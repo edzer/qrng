@@ -1,0 +1,3 @@
+useDynLib(qrng)
+
+export(quantum_runif)
