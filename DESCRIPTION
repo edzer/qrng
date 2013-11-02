@@ -7,7 +7,4 @@ Authors@R: c(person("Edzer", "Pebesma", role = c("aut", "cre"), email =
 Depends: R (>= 2.14.0)
 Description: Interface to a quantum random number service.
 License: GPL (>= 2)
-URL: https://qrng.physik.hu-berlin.de/download
-Packaged: 2013-11-02 21:10:51 UTC; edzer
-Maintainer: Edzer Pebesma <edzer.pebesma@uni-muenster.de>
-Author: Edzer Pebesma [aut, cre]
+URL: https://qrng.physik.hu-berlin.de/download, http://github.com/edzer/qrng
