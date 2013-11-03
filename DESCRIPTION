@@ -1,5 +1,5 @@
 Package: qrng
-Version: 0.1-2
+Version: 0.1-3
 Date: 2013-03-12
 Title: interface to the qrng quantum random number generator
 Authors@R: c(person("Edzer", "Pebesma", role = c("aut", "cre"), email =
@@ -7,4 +7,4 @@ Authors@R: c(person("Edzer", "Pebesma", role = c("aut", "cre"), email =
 Depends: R (>= 2.14.0)
 Description: Interface to a quantum random number service.
 License: GPL (>= 2)
-URL: https://qrng.physik.hu-berlin.de/download, http://github.com/edzer/qrng
+URL: http://github.com/edzer/qrng, https://qrng.physik.hu-berlin.de/download
