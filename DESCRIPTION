@@ -7,4 +7,6 @@ Authors@R: c(person("Edzer", "Pebesma", role = c("aut", "cre"), email =
 Depends: R (>= 2.14.0)
 Description: Interface to a quantum random number service.
 License: GPL (>= 2)
-URL: http://github.com/edzer/qrng, https://qrng.physik.hu-berlin.de/download
+URL: http://github.com/edzer/qrng
+SystemRequirements: for building, you need to install the libQRNG binary and
+	header file from https://qrng.physik.hu-berlin.de/download
