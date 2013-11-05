@@ -3,11 +3,11 @@ quantum_runif = function(n, min = 0.0, max = 1.0,..., user, password) {
 	min + ret * max
 }
 
-setup_QRNG = function(usr, passwd, ssl = 0L, bufsize = 1e6) {
-	stopifnot(!missing(usr))
-	stopifnot(!missing(passwd))
-	stopifnot(ssl == 0 || ssl == 1)
+setup_QRNG = function(user, password, ssl = TRUE, bufsize = 1e6) {
+	stopifnot(!missing(user))
+	stopifnot(!missing(password))
+	stopifnot(is.logical(ssl))
 	stopifnot(bufsize > 0)
-	.Call("setup_QRNG", usr, passwd, as.integer(ssl), as.integer(bufsize))
+	.Call("setup_QRNG", user, password, as.integer(ssl), as.integer(bufsize))
 	RNGkind("user")
 }
