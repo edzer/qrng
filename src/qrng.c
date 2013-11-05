@@ -55,7 +55,7 @@ SEXP setup_QRNG(SEXP s_usr, SEXP s_passwd, SEXP s_ssl, SEXP s_bufsize) {
 	return(s_ssl);
 }
 
-double *user_unif_rand() {
+double *user_unif_rand(void) {
 	int err, rcvd;
 	if (i == buf_size || i < 0) {
 		err = qrng_get_double_array(buf, buf_size, &rcvd);
@@ -68,13 +68,19 @@ double *user_unif_rand() {
 	return(&(buf[i++]));
 }
 
+void close_QRNG(void) {
+	qrng_disconnect();
+}
+
 static R_CallMethodDef CallEntries[] = {
     {"QRNG", (DL_FUNC) &QRNG, 3},
 	{"setup_QRNG", (DL_FUNC) setup_QRNG, 4},
     {NULL, NULL, 0}
 };
+
 static const R_CMethodDef CEntries[]  = {
 	{"user_unif_rand", (DL_FUNC) &user_unif_rand, 0},
+	{"close_QRNG", (DL_FUNC) &close_QRNG, 0},
     {NULL, NULL, 0}
 };
 
