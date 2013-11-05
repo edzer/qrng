@@ -50,6 +50,7 @@ SEXP setup_QRNG(SEXP s_usr, SEXP s_passwd, SEXP s_ssl, SEXP s_bufsize) {
 		connected = 1;
 	buf_size = INTEGER_POINTER(s_bufsize)[0];
 	buf = (double *) realloc(buf, buf_size * sizeof(double));
+	i = -1;
 	if (buf == NULL)
 		PROBLEM "cannot allocate buffer for qrng" ERROR;
 	return(s_ssl);
