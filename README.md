@@ -4,7 +4,7 @@ You need to register for this site, but the random numbers are for free. The reg
 
 The package is not on [CRAN](http://cran.r-project.org) because of its dependency on the binary libQRNG library, binary executable code is [not allowed](http://cran.r-project.org/web/packages/policies.html) in CRAN source packages.
 
-# sample session:
+### sample session:
 ```
 > library(qrng)
 > quantum_runif(10, user = "edzer", password = "YourPW")
