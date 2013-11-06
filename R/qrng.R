@@ -12,6 +12,10 @@ setup_QRNG = function(user, password, ssl = TRUE, bufsize = 1e5) {
 	RNGkind("user")
 }
 
+QRNG_seed = function(user, password) {
+	.Call("QRNG_seed", user, password)
+}
+
 .onUnload <- function(libpath) {
 	.C("close_QRNG")
     library.dynam.unload("qrng", libpath)

@@ -33,6 +33,22 @@ SEXP QRNG(SEXP s_n, SEXP s_usr, SEXP s_passwd) {
 	return(rn);
 }
 
+SEXP QRNG_seed(SEXP s_usr, SEXP s_passwd) {
+	const char *usr, *passwd;
+	int err, ret;
+	SEXP rn;
+
+	usr = CHAR(STRING_ELT(s_usr, 0));
+	passwd = CHAR(STRING_ELT(s_passwd, 0));
+	err = qrng_connect_and_get_int(usr, passwd, &ret);
+	if (err)
+		PROBLEM "qrng error: %s", qrng_error_strings[err] ERROR;
+	PROTECT(rn = NEW_INTEGER(1));
+	INTEGER_POINTER(rn)[0] = ret;
+	UNPROTECT(1);
+	return(rn);
+}
+
 static int connected = 0, buf_size = 0, i = -1;
 static double *buf = NULL;
 
@@ -75,6 +91,7 @@ void close_QRNG(void) {
 
 static R_CallMethodDef CallEntries[] = {
     {"QRNG", (DL_FUNC) &QRNG, 3},
+    {"QRNG_seed", (DL_FUNC) &QRNG_seed, 2},
 	{"setup_QRNG", (DL_FUNC) setup_QRNG, 4},
     {NULL, NULL, 0}
 };

@@ -2,5 +2,6 @@ useDynLib(qrng)
 
 export(
 	quantum_runif,
-	setup_QRNG
+	setup_QRNG,
+	QRNG_seed
 )
