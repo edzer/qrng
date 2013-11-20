@@ -14,7 +14,7 @@ get quantum random numbers:
  [1] 0.20538839 0.90860514 0.17295354 0.32030059 0.36653032 0.94955527
  [7] 0.35582723 0.88221983 0.29111428 0.09642045
 ```
-et a quantum integer, to be used as random seed:
+set a quantum integer, to be used as random seed:
 ```
 > QRNG_seed("edzer", "YourPW")
 [1] -1438960125
