@@ -39,12 +39,13 @@ laws of nature.'' Registration is used to avoid that a single user
 dominates a shared resource (bandwidth). }
 
 \examples{
-\dontrun{
-# fill in correct user and password
-quantum_runif(100, user = "edzer", password = "theRightPasswd")
-setup_QRNG("edzer", "theRightPasswd")
+# fill in correct user and password, or set them by
+# options("qrng.user" = "my_user")
+# options("qrng.password" = "my_password")
+source("~/.Rprofile")
+quantum_runif(100)
+setup_QRNG()
 # your quantum random numbers are now produced by:
 runif(10)
-}
 }
 \keyword{dplot}

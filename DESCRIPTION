@@ -5,6 +5,8 @@ Title: interface to the qrng quantum random number generator
 Authors@R: c(person("Edzer", "Pebesma", role = c("aut", "cre"), email =
         "edzer.pebesma@uni-muenster.de"))
 Depends: R (>= 2.14.0)
+Suggests: knitr
+VignetteBuilder: knitr
 Description: Interface to a quantum random number service.
 License: GPL (>= 2)
 URL: http://github.com/edzer/qrng

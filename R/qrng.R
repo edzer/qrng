@@ -1,18 +1,25 @@
-quantum_runif = function(n, min = 0.0, max = 1.0,..., user, password) {
+quantum_runif = function(n, min = 0.0, max = 1.0,..., 
+		user = getOption("qrng.user"), password = getOption("qrng.password")) {
+	stopifnot(!is.null(user))
+	stopifnot(!is.null(password))
 	ret = .Call("QRNG", as.integer(n), user, password)
 	min + ret * max
 }
 
-setup_QRNG = function(user, password, ssl = TRUE, bufsize = 1e5) {
-	stopifnot(!missing(user))
-	stopifnot(!missing(password))
+setup_QRNG = function(user = getOption("qrng.user"), 
+		password = getOption("qrng.password"), ssl = TRUE, bufsize = 1e5) {
+	stopifnot(!is.null(user))
+	stopifnot(!is.null(password))
 	stopifnot(is.logical(ssl))
 	stopifnot(bufsize > 0)
 	.Call("setup_QRNG", user, password, as.integer(ssl), as.integer(bufsize))
 	RNGkind("user")
 }
 
-QRNG_seed = function(user, password) {
+QRNG_seed = function(user = getOption("qrng.user"), 
+		password = getOption("qrng.password")) {
+	stopifnot(!is.null(user))
+	stopifnot(!is.null(password))
 	.Call("QRNG_seed", user, password)
 }
 
