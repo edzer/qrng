@@ -1,0 +1,9 @@
+% \VignetteEngine{knitr::knitr} 
+% \VignetteIndexEntry{qrng}
+
+QRNG vignette
+```{r}
+library(qrng)
+source("~/.Rprofile")
+quantum_runif(10)
+```
