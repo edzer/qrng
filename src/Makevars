@@ -1,1 +1,2 @@
-	PKG_LIBS = -L. -lQRNG
+PKG_LIBS = -L/usr/local/lib -lQRNG
+PKG_CPPFLAGS = -I/usr/local/include
