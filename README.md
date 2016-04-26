@@ -8,6 +8,27 @@ You need to register for this site, but the random numbers are for free. The reg
 
 The package is not on [CRAN](http://cran.r-project.org) because of its dependency on the binary libQRNG library, binary executable code is [not allowed](http://cran.r-project.org/web/packages/policies.html) in CRAN source packages. After logging in, the required libQRNG library can be downloaded.
 
+### Installing qrng
+
+You can install the shared library (.dll or .so) in an appropriate directory. For linux, take
+the following steps:
+
+1. install the `.so` file in  `/usr/local/lib`
+1. make sure that `/etc/ld.so.conf` contains `/usr/local/lib`, or if it refers to files included that one of these files contain it
+1. run `sudo ldconfig`, or on systems without `sudo` run `ldconfig` as root.
+
+### Installing the qrng R package
+
+Make sure that package `devtools` is installed, otherwise install it with
+```
+install.packages("devtools")
+```
+and then install directly from github:
+```
+library(devtools)
+install_github("edzer/qrng")
+```
+
 ### sample session:
 ```
 > library(qrng)
