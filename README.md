@@ -20,10 +20,13 @@ the following steps:
 ### Installing the qrng R package
 
 Make sure that package `devtools` is installed, otherwise install it with
+
 ```
 install.packages("devtools")
 ```
+
 and then install directly from github:
+
 ```
 library(devtools)
 install_github("edzer/qrng")
